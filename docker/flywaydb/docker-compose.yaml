@@ -1,6 +1,12 @@
 version: '3'
+
+networks:
+    db-network:
+        external: true
+
 services:
   flyway:
+    container_name: sb_flyway
     image: flyway/flyway
     command: >
       -configFiles=/flyway/conf/flyway.config 
@@ -11,5 +17,4 @@ services:
       - ${PWD}/sql_versions:/flyway/sql
       - ${PWD}/docker-flyway.config:/flyway/conf/flyway.config
     networks:
-      db-network:
-        external: true
+      - db-network
