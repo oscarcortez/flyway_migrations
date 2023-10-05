@@ -16,6 +16,6 @@ services:
     environment:
       - POSTGRES_PASSWORD=123456
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=opa_binance
+      - POSTGRES_DB=silver_bullet_db
     networks:
       - db-network
