@@ -1,6 +1,12 @@
 version: '3'
+
+networks:
+    db-network:
+        external: true
+
 services:
   flyway:
+    container_name: sb_flyway
     image: flyway/flyway
     command: >
       -configFiles=/flyway/conf/flyway.config 
@@ -10,14 +16,5 @@ services:
     volumes:
       - ${PWD}/sql_versions:/flyway/sql
       - ${PWD}/docker-flyway.config:/flyway/conf/flyway.config
-    depends_on:
-      - postgres
-  postgres:
-    image: postgres
-    restart: always
-    ports:
-    - "5432:5432"
-    environment:
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=123456
-    - POSTGRES_DB=flywaydb
+    networks:
+      - db-network
