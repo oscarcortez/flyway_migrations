@@ -1,4 +1,9 @@
 version: '3'
+
+networks:
+    db_network:
+        external: true
+
 services:
   postgres:
     container_name: sb_postgres
@@ -13,5 +18,4 @@ services:
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: silver_bullet_db
     networks:
-      db-network:
-        external: true
+      - db_network
