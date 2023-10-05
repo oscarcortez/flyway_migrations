@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-    db_network:
+    db-network:
         external: true
 
 services:
@@ -18,4 +18,4 @@ services:
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: silver_bullet_db
     networks:
-      - db_network
+      - db-network
