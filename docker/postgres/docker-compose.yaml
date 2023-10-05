@@ -14,8 +14,8 @@ services:
     volumes:
     - ~/docker-volumes/postgres:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123456
-      POSTGRES_DB: silver_bullet_db
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=opa_binance
     networks:
       - db-network
