@@ -11,4 +11,5 @@ services:
       - ${PWD}/sql_versions:/flyway/sql
       - ${PWD}/docker-flyway.config:/flyway/conf/flyway.config
     networks:
-      - db-network
+      db-network:
+        external: true

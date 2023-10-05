@@ -13,4 +13,5 @@ services:
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: silver_bullet_db
     networks:
-      - db-network
+      db-network:
+        external: true
