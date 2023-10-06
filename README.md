@@ -16,7 +16,9 @@ Format: R__{short description of the action}.sql
 The Repeatable files will run after all versioned files
 
 Versioned files: 
+
 sql_versions/V202310031218__Create_person_table.sql
+
 Format: V{number indicates the execution order}__{shor description of the action}.sql
 
 In my case we use date + time because we work in team. But you can use sequential numbers too
@@ -24,12 +26,14 @@ In my case we use date + time because we work in team. But you can use sequentia
 
 In the case of repeatable tables is good approach to use idempotent ddl scripts, more info about this: https://www.sqlservercentral.com/steps/idempotent-ddl-scripts-that-always-achieve-the-same-result-making-changes-only-once-stairway-to-exploring-database-metadata-level-6
 
-
-
 docker-flyway.config:
+
 flyway.url=jdbc:postgresql://postgres:5432/{db_name}
+
 flyway.user=postgres (postgres user)
+
 flyway.password=123456 postgres password
+
 flyway.baselineOnMigrate=false 
 
 
@@ -40,6 +44,7 @@ docker network create db_network
 docker-compose-postgres.yml:
 
 if you dont have a existing db, you can create with this one docker-compose: 
+
 docker-compose -f docker-compose-postgres.yml up -d
 
 
