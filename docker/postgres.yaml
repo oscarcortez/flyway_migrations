@@ -12,10 +12,12 @@ services:
     ports:
     - "5432:5432"
     volumes:
-    - ~/docker-volumes/postgres:/var/lib/postgresql/data
+    - sb_postgres_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=123456
       - POSTGRES_USER=postgres
       - POSTGRES_DB=silver_bullet_db
     networks:
       - db-network
+volumes:
+  sb_postgres_data: 
