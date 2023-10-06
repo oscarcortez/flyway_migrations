@@ -32,7 +32,7 @@ flyway.url=jdbc:postgresql://postgres:5432/{db_name}
 
 flyway.user=postgres (postgres user)
 
-flyway.password=123456 postgres password
+flyway.password=123456 (postgres password)
 
 flyway.baselineOnMigrate=false 
 
