@@ -41,16 +41,12 @@ First you need to create a db-network: (you can you another name)
 docker network create db_network
 
 
-docker-compose-postgres.yml:
+Create postgres db container and execution of migrations: 
 
-if you dont have a existing db, you can create with this one docker-compose: 
+for windows envs: 
 
-docker-compose -f docker-compose-postgres.yml up -d
+docker-compose -f docker-compose-windows up -d 
 
+for linux envs: 
 
-
-if you already have a postgres docker file, please add this network: db-network as it is in postgres docker-compose file
-
-
-To execute the migration execute flyway docker compose: 
-docker-compose -f docker-compose-flyway-migrate.yml up -d
+docker-compose -f docker-compose-linux up -d 
